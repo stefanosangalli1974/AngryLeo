@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Angry Leo</title>
+    <!--
+    <script src="js/jquery/jquery-1.9.1.js"></script>
+    <script src="js/jquery/jquery-1.9.1.js"></script>
+    <script src="js/jquery/jquery-1.9.1.js"></script>
+    -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script src="js/Box2dWeb-2.1.a.3.min.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/boxbox.min.js"></script>
+    
+  </head>
+  <body>
+    <canvas id="game" width=800 height=600 style="border:2px solid #ff0000;float:left;background-color:#6699cc;background:url('images/background-schema.png');">
+      Text that you see if you don't support Canvas :(
+    </canvas>
+    <script src="js/game.js"></script>
+    
+    Punti:<input type="text" id="points" value="0" />
+    <br />
+    Power: <input type="text" id="power" value="100" onchange="javascript:setPower();" />
+    
+    <script type="text/javascript" charset="utf-8">
+        function setPower() {
+            power = document.getElementById("power").value;
+        }
+    
+    
+        function _onMouseDown(e) {
+            console.log("onMouseDown");
+            dragPlayer(e); 
+        }
+        jQuery(document).ready(function(){
+            $(document).mousemove(function(e){
+                dragPlayer(e);  
+                //$('#status').html(e.pageX +', '+ e.pageY);
+            }); 
+        })
+
+    /*
+    $(function() {
+        $(window.document.getElementById("player")).draggable({
+            drag: function(event, ui) {
+                console.log("draggable ",event,ui);    
+            }
+        });    
+        $( "#draggable" ).draggable({
+            drag: function(event, ui) {
+                console.log("draggable ",event,ui);    
+            }
+        });
+    });
+    */
+</script>
+  </body>
+</html>
